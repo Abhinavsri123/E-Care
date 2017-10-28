@@ -6,6 +6,7 @@
     tools:context="com.ecare.newu.e_care.public_portal.submit_image">
 
 
+
     <Button
         android:text="UPLOAD"
         android:layout_width="wrap_content"
@@ -26,14 +27,14 @@
 
     <TextView
         android:text="Date"
+        android:textSize="24sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv"
         android:layout_alignParentStart="true"
         android:layout_marginStart="15dp"
         android:layout_marginTop="31dp"
-        android:id="@+id/textView23"
-        android:textSize="24sp" />
+        android:id="@+id/textView23" />
 
     <EditText
         android:layout_width="20dp"
@@ -42,9 +43,33 @@
         android:ems="10"
         android:id="@+id/editText2"
         android:hint="DD"
-        android:layout_alignTop="@+id/textView23"
+        android:layout_alignBottom="@+id/editText3"
         android:layout_alignStart="@+id/tv"
-        android:layout_toStartOf="@+id/button1" />
+        android:layout_toStartOf="@+id/button1"
+        android:layout_alignTop="@+id/editText3" />
+
+    <EditText
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText4"
+        android:hint="YYYY"
+        android:layout_alignBaseline="@+id/textView23"
+        android:layout_alignBottom="@+id/textView23"
+        android:layout_toEndOf="@+id/button1"
+        android:layout_marginStart="23dp" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:id="@+id/editText3"
+        android:hint="MM"
+        android:layout_width="50dp"
+        android:layout_alignBaseline="@+id/editText4"
+        android:layout_alignBottom="@+id/editText4"
+        android:layout_alignEnd="@+id/button1" />
 
     <TextView
         android:text="Time"
@@ -53,28 +78,29 @@
         android:id="@+id/textView24"
         android:textSize="24sp"
         android:layout_below="@+id/editText2"
-        android:layout_alignStart="@+id/textView23" />
+        android:layout_alignStart="@+id/textView23"
+        android:layout_marginTop="51dp" />
 
     <EditText
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="time"
         android:ems="10"
-        android:id="@+id/editText3"
-        android:hint="MM"
-        android:layout_alignBaseline="@+id/editText2"
-        android:layout_alignBottom="@+id/editText2"
-        android:layout_toEndOf="@+id/editText2"
+        android:id="@+id/editText"
+        android:layout_alignTop="@+id/textView24"
+        android:layout_alignStart="@+id/editText2"
+        android:hint="HH"
         android:layout_width="50dp" />
 
     <EditText
-        android:layout_width="80dp"
+        android:layout_width="50dp"
+        android:hint="MM"
         android:layout_height="wrap_content"
-        android:inputType="textPersonName"
+        android:inputType="time"
         android:ems="10"
-        android:layout_alignTop="@+id/editText3"
-        android:layout_toEndOf="@+id/editText3"
-        android:id="@+id/editText4"
-        android:hint="YYYY" />
+        android:id="@+id/editText5"
+        android:layout_alignBaseline="@+id/textView24"
+        android:layout_alignBottom="@+id/textView24"
+        android:layout_alignStart="@+id/editText3" />
 
 
 </RelativeLayout>
