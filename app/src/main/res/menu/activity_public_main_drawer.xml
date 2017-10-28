@@ -56,10 +56,10 @@
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/policeservice"
+                android:id="@+id/policeservice1"
                 android:title="Contact Police Service" />
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/ambulance"
                 android:title="Contact Ambulance" />
         </menu>
     </item>

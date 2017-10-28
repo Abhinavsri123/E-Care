@@ -1,8 +1,16 @@
 package com.ecare.newu.e_care.public_portal;
 
+import android.Manifest;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
+import android.support.v7.app.AlertDialog;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -14,6 +22,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ecare.newu.e_care.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class public_main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -63,10 +74,10 @@ public class public_main extends AppCompatActivity
 
         } else if (id == R.id.mydetails) {
             setTitle("My Points");
-           getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new points()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new points()).commit();
 
 
-        }  else if (id == R.id.viewchallan) {
+        } else if (id == R.id.viewchallan) {
             setTitle("My Challan");
             getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new view_challan()).commit();
 
@@ -74,10 +85,67 @@ public class public_main extends AppCompatActivity
         } else if (id == R.id.pay) {
             setTitle("Pay Online");
             getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new pay_challan()).commit();
+        } else if (id == R.id.policeservice1) {
+          checkAndRequestPermissions();
+        } else if (id == R.id.ambulance) {
+            checkAndRequestPermissions1();
         }
-
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
+
+    private boolean checkAndRequestPermissions() {
+        int call = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
+
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        if (call != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.CALL_PHONE);
+        }
+
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray
+                    (new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
+            return false;
+        }
+        contact1();
+        return true;
+    }
+
+    private boolean checkAndRequestPermissions1() {
+        int call = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
+
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        if (call != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.CALL_PHONE);
+        }
+
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray
+                    (new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
+            return false;
+        }
+        contact2();
+        return true;
+    }
+
+    public void contact1() {
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:112"));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        startActivity(callIntent);
+    }
+
+    public void contact2() {
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:112"));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        startActivity(callIntent);
     }
 }
