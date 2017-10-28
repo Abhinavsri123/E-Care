@@ -36,5 +36,5 @@
         android:layout_marginTop="52dp"
         android:id="@+id/button3"
         android:layout_below="@+id/button2"
-        android:layout_alignStart="@+id/button2" />
+        android:layout_alignEnd="@+id/button2" />
 </RelativeLayout>

@@ -10,11 +10,8 @@
             android:enabled="false">
         </item>
         <item
-            android:id="@+id/rates"
-            android:title="See Ambulance Rates" />
-        <item
             android:id="@+id/book"
-            android:title="Book Your Ambulance" />
+            android:title="Bookings" />
     </group>
     <group
         android:id="@+id/menu_top1"
@@ -32,19 +29,15 @@
             android:title="Change The Route" />
         <item
         android:id="@+id/traffic"
-        android:title="Traffic control On the same route" />
+        android:title="Emergancy Traffic Control" />
     </group>
 
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="Share" />
-            <item
-                android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="Send" />
+                android:id="@+id/police"
+                android:title="Police Control Room" />
+
         </menu>
     </item>
 
