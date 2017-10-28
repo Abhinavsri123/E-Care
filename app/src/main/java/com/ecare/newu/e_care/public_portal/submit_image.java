@@ -19,9 +19,13 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ecare.newu.e_care.R;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import static android.app.Activity.RESULT_OK;
 
@@ -34,6 +38,7 @@ public class submit_image extends Fragment {
     Button button;
     int request_code = 1;
     Bitmap bitmap;
+    TextView t1,t2;
 
     public submit_image() {
         // Required empty public constructor
@@ -59,7 +64,27 @@ public class submit_image extends Fragment {
 
         });
 
+        t1 = (TextView) v.findViewById(R.id.textView25);
+        t2 = (TextView) v.findViewById(R.id.textView26);
+
+        t1.setText(getdate());
+        t2.setText(gettime());
         return v;
+    }
+
+
+    public String getdate()
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+        String currentDateandTime = sdf.format(new Date());
+        return currentDateandTime;
+    }
+
+    public String gettime()
+    {
+        SimpleDateFormat sdf = new SimpleDateFormat("HH:mm:ss");
+        String currentDateandTime = sdf.format(new Date());
+        return currentDateandTime;
     }
 
 
@@ -71,6 +96,8 @@ public class submit_image extends Fragment {
             Bundle b = data.getExtras();
             Bitmap bmp = (Bitmap) b.get("data");
             imageButton.setImageBitmap(bmp);
+            t1.setText(getdate());
+            t2.setText(gettime());
         }
 
     }
