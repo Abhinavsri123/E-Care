@@ -20,7 +20,7 @@ public class add_complain extends Fragment {
 
     private RadioGroup radioSexGroup;
     private RadioButton radioSexButton;
-    private Button btnDisplay;
+   // private Button btnDisplay;
     View v;
 
     public add_complain() {
@@ -34,41 +34,28 @@ public class add_complain extends Fragment {
 
         // Inflate the layout for this fragment
         v = inflater.inflate(R.layout.fragment_add_complain, container, false);
-        addListenerOnButton();
-        return v;
-    }
-
-    public void addListenerOnButton() {
+        //addListenerOnButton();
 
         radioSexGroup = (RadioGroup) v.findViewById(R.id.radioSex);
-        btnDisplay = (Button) v.findViewById(R.id.btnDisplay);
+        int selectedId = radioSexGroup.getCheckedRadioButtonId();
 
-        btnDisplay.setOnClickListener(new View.OnClickListener() {
+        // find the radiobutton by returned id
+        //   radioSexButton = (RadioButton) v.findViewById(selectedId);
 
+        radioSexGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
-            public void onClick(View v1) {
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
 
-                // get selected radio button from radioGroup
-                int selectedId = radioSexGroup.getCheckedRadioButtonId();
-
-                // find the radiobutton by returned id
-             //   radioSexButton = (RadioButton) v.findViewById(selectedId);
-
-                radioSexGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(RadioGroup group, int checkedId) {
-
-                        RadioButton button = (RadioButton) v.findViewById(checkedId);
-                        String m = button.getText().toString();
-                        Toast.makeText(getContext(), ""+m, Toast.LENGTH_SHORT).show();
-
-                    }
-                });
-
+                RadioButton button = (RadioButton) v.findViewById(checkedId);
+                String m = button.getText().toString();
+                Toast.makeText(getContext(), ""+m, Toast.LENGTH_SHORT).show();
 
             }
-
         });
+
+
+        return v;
+
     }
 }
 
