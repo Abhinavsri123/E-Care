@@ -10,22 +10,38 @@
             android:enabled="false">
         </item>
         <item
-            android:id="@+id/attendance"
+            android:id="@+id/image"
             android:title="Submit Image" />
         <item
-            android:id="@+id/Attendancedetails"
+            android:id="@+id/history"
             android:title="View History" />
         <item
             android:id="@+id/mydetails"
             android:title="My Points" />
     </group>
 
+    <group
+        android:id="@+id/menu_top1"
+        android:checkableBehavior="single">
+        <item android:checkable="false"
+            android:title="Challan"
+            android:checked="false"
+            android:enabled="false">
+        </item>
+        <item
+            android:id="@+id/viewchallan"
+            android:title="View Challan" />
+        <item
+            android:id="@+id/pay"
+            android:title="Pay Online Challan" />
+
+    </group>
 
 
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
-            android:title="Import" />
+            android:title="" />
         <item
             android:id="@+id/nav_gallery"
             android:title="Gallery" />
