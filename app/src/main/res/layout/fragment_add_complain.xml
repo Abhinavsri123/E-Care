@@ -5,10 +5,102 @@
     tools:context="com.ecare.newu.e_care.public_portal.add_complain">
 
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="ADD complain"
-        android:id="@+id/textView2" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_marginStart="18dp"
+        android:id="@+id/editText6"
+        android:hint="enter your location"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView2"
+        android:layout_marginTop="29dp" />
 
+    <TextView
+        android:text="Address:"
+        android:textSize="24sp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="19dp"
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_alignBottom="@+id/editText6"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="27dp" />
+
+    <TextView
+        android:text="Complaint"
+        android:textSize="24sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="97dp"
+        android:id="@+id/textView13"
+        android:layout_below="@+id/editText6"
+        android:layout_toStartOf="@+id/editText6" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:layout_height="100dp"
+        android:id="@+id/editText7"
+        android:hint="type your complaint"
+        android:layout_below="@+id/editText6"
+        android:layout_alignStart="@+id/editText6"
+        android:layout_marginTop="52dp" />
+
+    <TextView
+        android:text="Do You Want Only Female Officer To Get In Touch With You?"
+        android:layout_marginTop="33dp"
+        android:id="@+id/textView22"
+        android:textSize="25sp"
+        android:layout_below="@+id/editText7"
+        android:layout_alignStart="@+id/textView2"
+        android:layout_width="350dp"
+        android:layout_height="100dp" />
+
+
+    <RadioGroup
+        android:id="@+id/radioSex"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+
+    </RadioGroup>
+
+    <RadioButton
+        android:id="@+id/radioMale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/radio_yes"
+        android:checked="true"
+        android:layout_below="@+id/textView22"
+        android:layout_alignStart="@+id/textView22"
+        android:layout_marginStart="14dp" />
+
+    <RadioButton
+        android:id="@+id/radioFemale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/radio_no"
+        android:layout_below="@+id/textView22"
+        android:layout_alignEnd="@+id/editText7"
+        android:layout_marginEnd="64dp" />
+
+    <Button
+        android:id="@+id/btnDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_display"
+        android:layout_marginStart="21dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/radioMale" />
+
+    <Button
+        android:text="SUBMIT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/btnDisplay"
+        android:layout_alignEnd="@+id/radioFemale"
+        android:layout_marginEnd="13dp"
+        android:id="@+id/button6" />
 </RelativeLayout>
