@@ -46,39 +46,21 @@
         </item>
         <item
             android:id="@+id/vehicle"
-            android:title="Upload Vehicle number" />
-        <item
-            android:id="@+id/location"
-            android:title="Add Location" />
+            android:title="Mention Travelling Details" />
         <item
             android:id="@+id/issue"
             android:title="Add Complaints" />
     </group>
 
 
-    <group android:checkableBehavior="single">
-        <item
-            android:id="@+id/nav_camera"
-            android:title="" />
-        <item
-            android:id="@+id/nav_gallery"
-            android:title="Gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:title="Slideshow" />
-        <item
-            android:id="@+id/nav_manage"
-            android:title="Tools" />
-    </group>
-
     <item android:title="Communicate">
         <menu>
             <item
-                android:id="@+id/nav_share"
-                android:title="Share" />
+                android:id="@+id/policeservice"
+                android:title="Contact Police Service" />
             <item
                 android:id="@+id/nav_send"
-                android:title="Send" />
+                android:title="Contact Ambulance" />
         </menu>
     </item>
 
