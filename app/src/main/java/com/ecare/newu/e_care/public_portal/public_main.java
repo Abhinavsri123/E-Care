@@ -25,14 +25,6 @@ public class public_main extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -54,46 +46,34 @@ public class public_main extends AppCompatActivity
         }
     }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.public_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
-    }
-
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.image) {
+            setTitle("Submit Image");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new submit_image()).commit();
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.history1) {
+            setTitle("View History");
+       //     getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, new Attendance_Coordinator()).commit();
 
-        } else if (id == R.id.nav_manage) {
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.mydetails) {
+            setTitle("My Points");
+       //     getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, new Attendance_Coordinator()).commit();
 
-        } else if (id == R.id.nav_send) {
 
+        }  else if (id == R.id.viewchallan) {
+            setTitle("My Challlan");
+        //    getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, new Attendance_Coordinator()).commit();
+
+
+        } else if (id == R.id.pay) {
+            setTitle("Pay Online");
+           // getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, new Attendance_Coordinator()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

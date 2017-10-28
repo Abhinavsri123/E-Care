@@ -13,11 +13,11 @@
             android:id="@+id/image"
             android:title="Submit Image" />
         <item
-            android:id="@+id/history"
+            android:id="@+id/history1"
             android:title="View History" />
         <item
             android:id="@+id/mydetails"
-            android:title="My Points" />
+            android:title="My Points"/>
     </group>
 
     <group
