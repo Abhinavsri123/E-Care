@@ -7,4 +7,114 @@
     <!-- TODO: Update blank fragment layout -->
 
 
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:layout_marginBottom="22dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/editText12" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:hint="enter the date"
+        android:id="@+id/editText8"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/editText10"
+        android:layout_marginTop="45dp" />
+
+    <TextView
+        android:text="Date:"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView25"
+        android:layout_alignBottom="@+id/editText8"
+        android:layout_alignStart="@+id/textView28" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="enter the type/name of vehicle"
+        android:ems="10"
+        android:id="@+id/editText10"
+        android:layout_marginEnd="10dp"
+        android:layout_alignBottom="@+id/textView26"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="vehicle no."
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView28"
+        android:layout_marginBottom="12dp"
+        android:layout_above="@+id/textView29"
+        android:layout_alignEnd="@+id/textView29" />
+
+    <TextView
+        android:text="Time"
+        android:textSize="25sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView26"
+        android:layout_alignStart="@+id/textView30"
+        android:layout_alignTop="@+id/editText9"
+        android:layout_alignBottom="@+id/editText9" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:hint="Enter the time"
+        android:id="@+id/editText9"
+        android:layout_marginTop="49dp"
+        android:layout_below="@+id/editText8"
+        android:layout_alignStart="@+id/editText10" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Enter The vehicle no."
+        android:ems="10"
+        android:id="@+id/editText11"
+        android:layout_above="@+id/textView28"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Message:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:id="@+id/textView29"
+        android:layout_below="@+id/editText12"
+        android:layout_alignStart="@+id/textView30" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/editText12"
+        android:layout_above="@+id/button5"
+        android:layout_alignParentEnd="true"
+        android:layout_marginBottom="101dp" />
+
+    <TextView
+        android:text="Vehicle Type:"
+        android:textSize="20sp"
+        android:layout_width="wrap_content"
+        android:id="@+id/textView30"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editText12"
+        android:layout_toStartOf="@+id/editText10" />
+
 </RelativeLayout>
