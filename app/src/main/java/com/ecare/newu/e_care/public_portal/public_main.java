@@ -98,6 +98,11 @@ public class public_main extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new add_complain()).commit();
 
         }
+        else if (id == R.id.callamb) {
+            setTitle("View Nearby Ambulance");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new view_ambulance()).commit();
+
+        }
        else if (id == R.id.policeservice1) {
           checkAndRequestPermissions();
         }
