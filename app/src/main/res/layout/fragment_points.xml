@@ -4,10 +4,26 @@
     android:layout_height="match_parent"
     tools:context="com.ecare.newu.e_care.public_portal.points">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Points" />
+   >
 
+    <TextView
+        android:text="My Points"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="67dp"
+        android:id="@+id/textView13"
+        android:textStyle="normal|bold"
+        android:textSize="36sp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView13"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="110dp"
+        android:id="@+id/textView22"
+        android:textSize="45sp" />
 </RelativeLayout>

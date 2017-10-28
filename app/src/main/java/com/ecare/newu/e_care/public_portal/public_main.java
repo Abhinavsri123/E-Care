@@ -81,12 +81,8 @@ public class public_main extends AppCompatActivity
             setTitle("My Challan");
             getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new view_challan()).commit();
 
+        }
 
-        }
-        else if (id == R.id.pay) {
-            setTitle("Pay Online");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new pay_challan()).commit();
-        }
 
         else if (id == R.id.vehicle) {
             setTitle("Submit Your Travelling Details");
@@ -153,7 +149,7 @@ public class public_main extends AppCompatActivity
 
     public void contact1() {
         Intent callIntent = new Intent(Intent.ACTION_CALL);
-        callIntent.setData(Uri.parse("tel:112"));
+        callIntent.setData(Uri.parse("tel:100"));
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             return;
         }
