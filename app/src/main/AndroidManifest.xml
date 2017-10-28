@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ecare.newu.e_care">
-    <uses-feature android:name="android.hardware.Camera"/>
-    <uses-permission android:name="android.permission.CALL_PHONE">
+    <uses-feature android:name="android.hardware.Camera2"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
         <uses-permission android:name="android.permission.CAMERA"/>
-    </uses-permission>
+        <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -23,6 +27,14 @@
             android:name=".public_portal.public_main"
             android:label="@string/title_activity_public_main"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyA9dmW80nJ8k2HXdcjxy6-U4CxsvP4wM3w"></meta-data>
     </application>
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"></uses-feature>
 
 </manifest>
