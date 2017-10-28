@@ -35,14 +35,6 @@ public class Main2Activity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -72,19 +64,19 @@ public class Main2Activity extends AppCompatActivity
 
         if (id == R.id.rush) {
             setTitle("See Rush");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_ambulance, new submit_image()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_ambulance, new rush()).commit();
 
         } else if (id == R.id.book) {
             setTitle("Booked Ambulance");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_ambulance, new submit_image()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_ambulance, new booking()).commit();
 
         } else if (id == R.id.route) {
             setTitle("Change Route");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_ambulance, new submit_image()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_ambulance, new change_route()).commit();
 
         } else if (id == R.id.traffic) {
             setTitle("Emergency Traffic Control ");
-            getSupportFragmentManager().beginTransaction().replace(R.id.container_ambulance, new submit_image()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_ambulance, new emergancy()).commit();
 
         } else if (id == R.id.police) {
             checkAndRequestPermissions();
