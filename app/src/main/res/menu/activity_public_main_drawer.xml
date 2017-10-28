@@ -1,6 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item android:checkable="false"
+            android:title="Report Rule Braking"
+            android:checked="false"
+            android:enabled="false">
+        </item>
+        <item
+            android:id="@+id/attendance"
+            android:title="Submit Image" />
+        <item
+            android:id="@+id/Attendancedetails"
+            android:title="View History" />
+        <item
+            android:id="@+id/mydetails"
+            android:title="My Points" />
+    </group>
+
+
+
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_camera"
