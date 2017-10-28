@@ -5,4 +5,12 @@
     tools:context="com.ecare.newu.e_care.Ambulance.emergancy">
 
 
+    <Button
+        android:text="Start Emergency service"
+        android:layout_width="200dp"
+        android:layout_height="100dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="181dp"
+        android:id="@+id/button8" />
 </RelativeLayout>
