@@ -22,7 +22,7 @@ public class trav_details extends Fragment {
 
     Spinner s1;
     String type[] = {"Select Vehical Type","Taxi","Auto","Ricksaw","Private Car","Rental Car"};
-    TextView t1,t2;
+    TextView t1,t2,t3;
 
     public trav_details() {
         // Required empty public constructor

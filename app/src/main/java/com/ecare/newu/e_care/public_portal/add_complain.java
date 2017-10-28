@@ -7,8 +7,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ecare.newu.e_care.R;
@@ -17,7 +19,7 @@ import com.ecare.newu.e_care.R;
  * A simple {@link Fragment} subclass.
  */
 public class add_complain extends Fragment {
-
+    private EditText editText1,editText2;
     private RadioGroup radioSexGroup;
     private RadioButton radioSexButton;
    // private Button btnDisplay;
