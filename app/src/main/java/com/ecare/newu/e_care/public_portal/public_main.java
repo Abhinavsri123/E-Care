@@ -58,22 +58,22 @@ public class public_main extends AppCompatActivity
 
         } else if (id == R.id.history1) {
             setTitle("View History");
-       //     getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, new Attendance_Coordinator()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new view_history()).commit();
 
 
         } else if (id == R.id.mydetails) {
             setTitle("My Points");
-       //     getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, new Attendance_Coordinator()).commit();
+           getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new points()).commit();
 
 
         }  else if (id == R.id.viewchallan) {
-            setTitle("My Challlan");
-        //    getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, new Attendance_Coordinator()).commit();
+            setTitle("My Challan");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new view_challan()).commit();
 
 
         } else if (id == R.id.pay) {
             setTitle("Pay Online");
-           // getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, new Attendance_Coordinator()).commit();
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new pay_challan()).commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
