@@ -45,6 +45,7 @@ public class public_main extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        checkAndRequestPermissions2();
     }
 
     @Override
@@ -111,7 +112,7 @@ public class public_main extends AppCompatActivity
         return true;
     }
 
-    public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
+    public static final int REQUEST_ID_MULTIPLE_PERMISSIONS1 = 1;
 
     private boolean checkAndRequestPermissions() {
         int call = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
@@ -123,7 +124,7 @@ public class public_main extends AppCompatActivity
 
         if (!listPermissionsNeeded.isEmpty()) {
             ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray
-                    (new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
+                    (new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS1);
             return false;
         }
         contact1();
@@ -164,4 +165,50 @@ public class public_main extends AppCompatActivity
         }
         startActivity(callIntent);
     }
+
+    public static final int REQUEST_ID_MULTIPLE_PERMISSIONS = 1;
+
+    private boolean checkAndRequestPermissions2() {
+
+
+
+
+        int call = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
+        int camera = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+        int loc = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION);
+        int floc = ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION);
+        int wrt = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        int internet = ContextCompat.checkSelfPermission(this, Manifest.permission.INTERNET);
+
+
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        if (call != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.CALL_PHONE);
+        }
+        if (camera != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.CAMERA);
+        }
+        if (loc != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.ACCESS_COARSE_LOCATION);
+        }
+        if (floc != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.ACCESS_FINE_LOCATION);
+        }
+        if (wrt != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
+        if (internet != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.INTERNET);
+        }
+
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray
+                    (new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS);
+            return false;
+        }
+        return true;
+    }
+
+
+
 }

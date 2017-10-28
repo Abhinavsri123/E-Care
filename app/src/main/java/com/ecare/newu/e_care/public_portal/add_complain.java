@@ -21,6 +21,7 @@ public class add_complain extends Fragment {
     private RadioGroup radioSexGroup;
     private RadioButton radioSexButton;
     private Button btnDisplay;
+    View v;
 
     public add_complain() {
         // Required empty public constructor
@@ -32,29 +33,38 @@ public class add_complain extends Fragment {
                              Bundle savedInstanceState) {
 
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_add_complain, container, false);
+        v = inflater.inflate(R.layout.fragment_add_complain, container, false);
         addListenerOnButton();
         return v;
     }
 
     public void addListenerOnButton() {
 
-        radioSexGroup = (RadioGroup) getActivity().findViewById(R.id.radioSex);
-        btnDisplay = (Button) getActivity().findViewById(R.id.btnDisplay);
+        radioSexGroup = (RadioGroup) v.findViewById(R.id.radioSex);
+        btnDisplay = (Button) v.findViewById(R.id.btnDisplay);
 
         btnDisplay.setOnClickListener(new View.OnClickListener() {
 
             @Override
-            public void onClick(View v) {
+            public void onClick(View v1) {
 
                 // get selected radio button from radioGroup
                 int selectedId = radioSexGroup.getCheckedRadioButtonId();
 
                 // find the radiobutton by returned id
-                radioSexButton = (RadioButton) v.findViewById(selectedId);
+             //   radioSexButton = (RadioButton) v.findViewById(selectedId);
 
-                Toast.makeText(getContext(),
-                        radioSexButton.getText(), Toast.LENGTH_SHORT).show();
+                radioSexGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+                    @Override
+                    public void onCheckedChanged(RadioGroup group, int checkedId) {
+
+                        RadioButton button = (RadioButton) v.findViewById(checkedId);
+                        String m = button.getText().toString();
+                        Toast.makeText(getContext(), ""+m, Toast.LENGTH_SHORT).show();
+
+                    }
+                });
+
 
             }
 

@@ -71,10 +71,6 @@ public class view_ambulance extends Fragment implements OnMapReadyCallback{
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
-
-
-
-
         MapsInitializer.initialize(getContext());
         mgoogleMap = googleMap;
 
