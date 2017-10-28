@@ -32,8 +32,6 @@ public class view_ambulance extends Fragment implements OnMapReadyCallback{
     GoogleMap mgoogleMap;
     MapView mapView;
     View v;
-    String stringLatitude ="";
-    String stringLongitude ="";
     public view_ambulance() {
         // Required empty public constructor
     }
