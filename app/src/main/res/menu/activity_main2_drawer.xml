@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item android:checkable="false"
+            android:title="Ambulance Boooking"
+            android:checked="false"
+            android:enabled="false">
+        </item>
+        <item
+            android:id="@+id/rates"
+            android:title="See Ambulance Rates" />
+        <item
+            android:id="@+id/book"
+            android:title="Book Your Ambulance" />
+    </group>
+    <group
+        android:id="@+id/menu_top1"
+        android:checkableBehavior="single">
+        <item android:checkable="false"
+            android:title="Ambulance Traffic Control"
+            android:checked="false"
+            android:enabled="false">
+        </item>
+        <item
+            android:id="@+id/rush"
+            android:title="See The Rush Ahead" />
+        <item
+            android:id="@+id/route"
+            android:title="Change The Route" />
+        <item
+        android:id="@+id/traffic"
+        android:title="Traffic control On the same route" />
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+        </menu>
+    </item>
+
+</menu>
