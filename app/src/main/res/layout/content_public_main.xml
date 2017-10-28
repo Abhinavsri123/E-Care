@@ -13,4 +13,10 @@
     tools:context="com.ecare.newu.e_care.public_portal.public_main"
     tools:showIn="@layout/app_bar_public_main">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container_public">
+    </RelativeLayout>
+
 </RelativeLayout>

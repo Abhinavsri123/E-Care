@@ -13,6 +13,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ecare.newu.e_care.R;
+
 public class public_main extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
