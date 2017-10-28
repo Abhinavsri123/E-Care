@@ -67,7 +67,7 @@ public class public_main extends AppCompatActivity
 
 
         }  else if (id == R.id.viewchallan) {
-            setTitle("My Challlan");
+            setTitle("My Challan");
         //    getSupportFragmentManager().beginTransaction().replace(R.id.container_admin, new Attendance_Coordinator()).commit();
 
 
