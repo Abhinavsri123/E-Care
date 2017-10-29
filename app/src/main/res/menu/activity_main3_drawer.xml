@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/menu_top"
+        android:checkableBehavior="single">
+        <item android:checkable="false"
+            android:title="Criminal Event Log"
+            android:checked="false"
+            android:enabled="false">
+        </item>
+        <item
+            android:id="@+id/rulebreak"
+            android:title="View Rule Breaking" />
+        <item
+            android:id="@+id/points"
+            android:title="Add Points" />
+    </group>
+    <group
+        android:id="@+id/menu_top1"
+        android:checkableBehavior="single">
+        <item android:checkable="false"
+            android:title="Challan Entries"
+            android:checked="false"
+            android:enabled="false">
+        </item>
+        <item
+            android:id="@+id/challan"
+            android:title="Create and Impose Challan" />
+    </group>
+    <group
+        android:id="@+id/menu_top2"
+        android:checkableBehavior="single">
+        <item android:checkable="false"
+            android:title="Women Travel Info"
+            android:checked="false"
+            android:enabled="false">
+        </item>
+        <item
+            android:id="@+id/details"
+            android:title="View Travelling Details" />
+        <item
+            android:id="@+id/complaints"
+            android:title="View Filed Complaints" />
+
+        <item
+            android:id="@+id/callamb"
+            android:title="Ambulances near You"
+            />
+    </group>
+
+    <group
+        android:id="@+id/menu_top3"
+        android:checkableBehavior="single">
+    <item android:checkable="false"
+        android:title="Ambulance Services"
+        android:checked="false"
+        android:enabled="false">
+    </item>
+    <item
+        android:id="@+id/service"
+        android:title="Ambulances Near You" />
+    <item
+        android:id="@+id/contact"
+        android:title="Contact Ambulance" />
+   </group>
+</menu>
