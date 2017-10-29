@@ -21,6 +21,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ecare.newu.e_care.Ambulance.booking;
 import com.ecare.newu.e_care.R;
 
 import java.util.ArrayList;
@@ -47,6 +48,8 @@ public class public_main extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         checkAndRequestPermissions2();
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new submit_image()).commit();
+
     }
 
     @Override

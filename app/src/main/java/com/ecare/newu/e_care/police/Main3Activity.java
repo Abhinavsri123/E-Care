@@ -19,6 +19,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.ecare.newu.e_care.Ambulance.booking;
 import com.ecare.newu.e_care.R;
 import com.ecare.newu.e_care.public_portal.submit_image;
 
@@ -45,6 +46,8 @@ public class Main3Activity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        getSupportFragmentManager().beginTransaction().replace(R.id.container_police, new view_rule_break()).commit();
+
     }
 
     @Override

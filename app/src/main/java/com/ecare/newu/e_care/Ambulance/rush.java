@@ -38,19 +38,10 @@ public class rush extends Fragment implements OnMapReadyCallback {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View v = inflater.inflate(R.layout.fragment_rush, container, false);
+        v = inflater.inflate(R.layout.fragment_rush, container, false);
 
-        Button b1= (Button) v.findViewById(R.id.button7);
-        b1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getContext(), "Getting Results...", Toast.LENGTH_SHORT).show();
-            }
-        });
         return v;
     }
-
-
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
@@ -70,10 +61,11 @@ public class rush extends Fragment implements OnMapReadyCallback {
         mgoogleMap = googleMap;
 
         mgoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(20.359202,85.822389)).title("See The Rush Ahead").snippet("Ambulance"));
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(20.359202,85.822389)).title("Change The Route").snippet("Ambulance"));
         CameraPosition amb = CameraPosition.builder().target(new LatLng(20.359202,85.822389)).zoom(16).bearing(0).tilt(0).build();
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(amb));
     }
+
 
 
 
