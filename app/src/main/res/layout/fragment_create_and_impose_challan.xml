@@ -1,13 +1,101 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.ecare.newu.e_care.police.create_and_impose_challan">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
 
-</FrameLayout>
+    <TextView
+        android:text="Vehicle No:"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="61dp"
+        android:id="@+id/textView46"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="enter"
+        android:ems="10"
+        android:layout_marginEnd="15dp"
+        android:id="@+id/editText"
+        android:layout_alignBottom="@+id/textView46"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="enter"
+        android:ems="10"
+        android:id="@+id/editText2"
+        android:layout_alignBaseline="@+id/textView47"
+        android:layout_alignBottom="@+id/textView47"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Challan Number:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="53dp"
+        android:id="@+id/textView47"
+        android:layout_below="@+id/textView46"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="Reason"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText2"
+        android:textSize="25sp"
+        android:layout_alignStart="@+id/textView46"
+        android:layout_marginTop="65dp"
+        android:id="@+id/textView48" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="enter the challan reason"
+        android:ems="10"
+        android:layout_alignTop="@+id/textView48"
+        android:layout_toEndOf="@+id/textView47"
+        android:id="@+id/editText4" />
+
+    <TextView
+        android:text="Fine"
+        android:textSize="22dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText4"
+        android:layout_alignStart="@+id/textView48"
+        android:layout_marginTop="61dp"
+        android:id="@+id/textView50"
+        android:layout_alignEnd="@+id/textView48" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="enter the fine amount"
+        android:ems="10"
+        android:layout_alignTop="@+id/textView50"
+        android:layout_alignStart="@+id/editText4"
+        android:id="@+id/editText5" />
+
+    <Button
+        android:text="SUBMIT"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button7"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="27dp" />
+</RelativeLayout>
