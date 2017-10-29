@@ -6,33 +6,43 @@
 
     <!-- TODO: Update blank fragment layout -->
 
-    <TextView
-        android:text="Vehicle No:"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="61dp"
-        android:id="@+id/textView46"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
-
     <EditText
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="enter"
+        android:hint="Enter Vehical Number"
         android:ems="10"
-        android:layout_marginEnd="15dp"
         android:id="@+id/editText"
         android:layout_alignBottom="@+id/textView46"
+        android:layout_alignStart="@+id/editText2"
         android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Vehicle No:"
+        android:layout_width="100dp"
+        android:textSize="18sp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="62dp"
+        android:id="@+id/textView46"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_height="35dp" />
+
+    <TextView
+        android:text="Challan No:"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:textSize="18sp"
+        android:layout_marginTop="24dp"
+        android:id="@+id/textView47"
+        android:layout_below="@+id/textView46"
+        android:layout_alignStart="@+id/textView46" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="enter"
+        android:hint="Enter Challan Number"
         android:ems="10"
         android:id="@+id/editText2"
         android:layout_alignBaseline="@+id/textView47"
@@ -40,62 +50,51 @@
         android:layout_alignParentEnd="true" />
 
     <TextView
-        android:text="Challan Number:"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_marginTop="53dp"
-        android:id="@+id/textView47"
-        android:layout_below="@+id/textView46"
-        android:layout_alignParentStart="true" />
-
-    <TextView
         android:text="Reason"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editText2"
-        android:textSize="25sp"
-        android:layout_alignStart="@+id/textView46"
-        android:layout_marginTop="65dp"
-        android:id="@+id/textView48" />
+        android:layout_height="35dp"
+        android:textSize="18sp"
+        android:layout_marginTop="13dp"
+        android:id="@+id/textView48"
+        android:layout_below="@+id/textView47"
+        android:layout_alignStart="@+id/textView47" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="enter the challan reason"
+        android:hint="Enter Resone"
         android:ems="10"
+        android:id="@+id/editText4"
         android:layout_alignTop="@+id/textView48"
-        android:layout_toEndOf="@+id/textView47"
-        android:id="@+id/editText4" />
+        android:layout_alignParentEnd="true" />
 
     <TextView
         android:text="Fine"
-        android:textSize="22dp"
+        android:textSize="18sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="35dp"
+        android:id="@+id/textView50"
         android:layout_below="@+id/editText4"
         android:layout_alignStart="@+id/textView48"
-        android:layout_marginTop="61dp"
-        android:id="@+id/textView50"
-        android:layout_alignEnd="@+id/textView48" />
+        android:layout_marginTop="16dp" />
 
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="enter the fine amount"
+        android:hint="Enter Fine Amount"
         android:ems="10"
+        android:id="@+id/editText5"
         android:layout_alignTop="@+id/textView50"
-        android:layout_alignStart="@+id/editText4"
-        android:id="@+id/editText5" />
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:text="SUBMIT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/button7"
+        android:layout_marginBottom="92dp"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="27dp" />
+        android:layout_toEndOf="@+id/textView47" />
 </RelativeLayout>
