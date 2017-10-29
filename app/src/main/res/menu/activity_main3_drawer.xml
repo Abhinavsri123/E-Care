@@ -50,6 +50,19 @@
     </group>
 
     <group
+        android:id="@+id/menu_top4"
+        android:checkableBehavior="single">
+        <item android:checkable="false"
+            android:title="Hospital"
+            android:checked="false"
+            android:enabled="false">
+        </item>
+        <item
+            android:id="@+id/hos"
+            android:title="View NearBy Hospital" />
+    </group>
+
+    <group
         android:id="@+id/menu_top3"
         android:checkableBehavior="single">
     <item android:checkable="false"
