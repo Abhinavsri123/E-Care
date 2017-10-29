@@ -34,7 +34,7 @@ import java.util.Map;
 public class trav_details extends Fragment {
 
     Spinner s1;
-    String type[] = {"Select Vehical Type","Taxi","Auto","Ricksaw","Private Car","Rental Car"};
+    String type[] = {"Select Vehical Type","Taxi","Auto","Rickshaw","Private Car","Rental Car"};
     TextView t1,t2,t3;
     String user = "shubham";
     EditText e1;
