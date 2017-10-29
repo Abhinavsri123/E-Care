@@ -122,17 +122,20 @@ public class submit_image extends Fragment {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (resultCode == RESULT_OK && requestCode == request_code) ;
         {
-            Uri filePath = data.getData();
+
             try {
-                bitmap1 = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
-                Bundle b = data.getExtras();
-                Bitmap bmp = (Bitmap) b.get("data");
-                imageButton.setImageBitmap(bmp);
+                Uri filePath = null;
+                if(data!=null) {
+                    filePath = data.getData();
 
-
-                // image = bmp.toString();
-                t1.setText(getdate());
-                t2.setText(gettime());
+                    bitmap1 = MediaStore.Images.Media.getBitmap(getActivity().getContentResolver(), filePath);
+                    Bundle b = data.getExtras();
+                    Bitmap bmp = (Bitmap) b.get("data");
+                    imageButton.setImageBitmap(bmp);
+                    // image = bmp.toString();
+                    t1.setText(getdate());
+                    t2.setText(gettime());
+                }
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {

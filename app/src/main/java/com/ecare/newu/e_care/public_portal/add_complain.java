@@ -33,8 +33,6 @@ import java.util.Map;
  */
 public class add_complain extends Fragment {
     private EditText editText1,editText2;
-    private RadioGroup radioSexGroup;
-    private RadioButton radioSexButton;
     String user = "shubham";
     String allow = "";
     String type[] = {"Select","Yes","No"};
