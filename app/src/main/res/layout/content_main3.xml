@@ -13,4 +13,10 @@
     tools:context="com.ecare.newu.e_care.police.Main3Activity"
     tools:showIn="@layout/app_bar_main3">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/container_police">
+    </RelativeLayout>
+
 </RelativeLayout>

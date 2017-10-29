@@ -7,11 +7,12 @@ import android.view.View;
 import android.widget.Button;
 
 import com.ecare.newu.e_care.Ambulance.Main2Activity;
+import com.ecare.newu.e_care.police.Main3Activity;
 import com.ecare.newu.e_care.public_portal.public_main;
 
 public class login extends AppCompatActivity {
 
-    Button b1,b3;
+    Button b1,b2,b3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,14 @@ public class login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(login.this, Main2Activity.class);
+                startActivity(i);
+            }
+        });
+        b2= (Button) findViewById(R.id.button3);
+        b2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(login.this, Main3Activity.class);
                 startActivity(i);
             }
         });
