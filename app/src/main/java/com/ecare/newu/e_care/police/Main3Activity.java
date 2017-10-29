@@ -1,8 +1,14 @@
 package com.ecare.newu.e_care.police;
 
+import android.Manifest;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -15,6 +21,9 @@ import android.view.MenuItem;
 
 import com.ecare.newu.e_care.R;
 import com.ecare.newu.e_care.public_portal.submit_image;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Main3Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -76,10 +85,39 @@ public class Main3Activity extends AppCompatActivity
             getSupportFragmentManager().beginTransaction().replace(R.id.container_police, new ambulances_near_you()).commit();
         }else if (id == R.id.contact) {
 
+            checkAndRequestPermissions();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+    public static final int REQUEST_ID_MULTIPLE_PERMISSIONS1 = 1;
+
+    private boolean checkAndRequestPermissions() {
+        int call = ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE);
+
+        List<String> listPermissionsNeeded = new ArrayList<>();
+        if (call != PackageManager.PERMISSION_GRANTED) {
+            listPermissionsNeeded.add(Manifest.permission.CALL_PHONE);
+        }
+
+        if (!listPermissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, listPermissionsNeeded.toArray
+                    (new String[listPermissionsNeeded.size()]), REQUEST_ID_MULTIPLE_PERMISSIONS1);
+            return false;
+        }
+        contact1();
+        return true;
+    }
+
+
+    public void contact1() {
+        Intent callIntent = new Intent(Intent.ACTION_CALL);
+        callIntent.setData(Uri.parse("tel:112"));
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        startActivity(callIntent);
     }
 }
