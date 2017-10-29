@@ -27,8 +27,9 @@ public class rush extends Fragment implements OnMapReadyCallback {
     GoogleMap mgoogleMap;
     MapView mapView;
     View v;
-    String stringLatitude ="";
-    String stringLongitude ="";
+    String stringLatitude = "";
+    String stringLongitude = "";
+
     public rush() {
         // Required empty public constructor
     }
@@ -47,8 +48,7 @@ public class rush extends Fragment implements OnMapReadyCallback {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         mapView = (MapView) v.findViewById(R.id.map2);
-        if(mapView != null)
-        {
+        if (mapView != null) {
             mapView.onCreate(null);
             mapView.onResume();
             mapView.getMapAsync(this);
@@ -61,12 +61,8 @@ public class rush extends Fragment implements OnMapReadyCallback {
         mgoogleMap = googleMap;
 
         mgoogleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
-        googleMap.addMarker(new MarkerOptions().position(new LatLng(20.359202,85.822389)).title("Change The Route").snippet("Ambulance"));
-        CameraPosition amb = CameraPosition.builder().target(new LatLng(20.359202,85.822389)).zoom(16).bearing(0).tilt(0).build();
+        googleMap.addMarker(new MarkerOptions().position(new LatLng(20.359202, 85.822389)).title("Change The Route").snippet("Ambulance"));
+        CameraPosition amb = CameraPosition.builder().target(new LatLng(20.359202, 85.822389)).zoom(16).bearing(0).tilt(0).build();
         googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(amb));
     }
-
-
-
-
 }

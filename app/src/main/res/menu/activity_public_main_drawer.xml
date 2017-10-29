@@ -60,6 +60,9 @@
         android:id="@+id/callamb"
         android:title="Ambulances near You"
         />
+        <item
+            android:id="@+id/hos"
+            android:title="Near By Hospital" />
         </group>
 
 

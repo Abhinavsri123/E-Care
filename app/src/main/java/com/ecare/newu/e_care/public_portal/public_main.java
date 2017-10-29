@@ -22,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ecare.newu.e_care.Ambulance.booking;
+import com.ecare.newu.e_care.Ambulance.view_hospital;
 import com.ecare.newu.e_care.R;
 
 import java.util.ArrayList;
@@ -103,6 +104,10 @@ public class public_main extends AppCompatActivity
             setTitle("View Nearby Ambulance");
             getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new view_ambulance()).commit();
 
+        }
+        else if (id == R.id.hos) {
+            setTitle("Near Hospital");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_public, new view_hospital()).commit();
         }
        else if (id == R.id.policeservice1) {
           checkAndRequestPermissions();

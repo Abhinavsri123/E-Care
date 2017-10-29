@@ -81,7 +81,13 @@ public class Main2Activity extends AppCompatActivity
             setTitle("Emergency Traffic Control ");
             getSupportFragmentManager().beginTransaction().replace(R.id.container_ambulance, new emergancy()).commit();
 
-        } else if (id == R.id.police) {
+        }
+        else if (id == R.id.hos) {
+            setTitle("Near Hospital");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_ambulance, new view_hospital()).commit();
+
+        }
+        else if (id == R.id.police) {
             checkAndRequestPermissions();
         }
 

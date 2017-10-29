@@ -20,6 +20,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ecare.newu.e_care.Ambulance.booking;
+import com.ecare.newu.e_care.Ambulance.view_hospital;
 import com.ecare.newu.e_care.R;
 import com.ecare.newu.e_care.public_portal.submit_image;
 
@@ -86,7 +87,12 @@ public class Main3Activity extends AppCompatActivity
         }else if (id == R.id.service) {
             setTitle("Ambulances Near You");
             getSupportFragmentManager().beginTransaction().replace(R.id.container_police, new ambulances_near_you()).commit();
-        }else if (id == R.id.contact) {
+        }
+        else if (id == R.id.hos) {
+            setTitle("Near Hospital");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_police, new view_hospital()).commit();
+        }
+        else if (id == R.id.contact) {
 
             checkAndRequestPermissions();
         }
