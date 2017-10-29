@@ -11,7 +11,18 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.ecare.newu.e_care.R;
+import com.ecare.newu.e_care.ip_url;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -25,6 +36,7 @@ public class view_history extends Fragment {
     ArrayList<String> date;
     ArrayList<String> status;
     ArrayList<String> point;
+    String user = "shubham";
 
     public view_history() {
         // Required empty public constructor
@@ -46,6 +58,8 @@ public class view_history extends Fragment {
         status = new ArrayList<String>();
         point = new ArrayList<String>();
 
+        server();
+        /*
 
         sn.add("1");
         date.add("10/10/2015");
@@ -58,9 +72,9 @@ public class view_history extends Fragment {
         date.add("10/12/2015");
         status.add("Under Process");
         point.add("0");
-
-        CustomAdapter customAdapter = new CustomAdapter();
-        l1.setAdapter(customAdapter);
+*/
+       // CustomAdapter customAdapter = new CustomAdapter();
+     //   l1.setAdapter(customAdapter);
 
         return v;
     }
@@ -100,4 +114,53 @@ public class view_history extends Fragment {
 
         }
     }
+
+    public void server() {
+
+        ip_url u   = new ip_url();
+        String ip = u.geturl();
+        String json_url_name = ip+"history.php";
+
+        JSONObject params = new JSONObject();
+        try {
+            params.put("user", user);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, json_url_name, params, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+                try {
+                    JSONArray jsonArray = response.getJSONArray("server_response");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject student = jsonArray.getJSONObject(i);
+                        String sn1 = student.getString("sn");
+                        String date1 = student.getString("date");
+                        String status1 = student.getString("status");
+                        String point1 = student.getString("point");
+                        sn.add(""+sn1);
+                        date.add("" + date1);
+                        status.add("" + status1);
+                        point.add("" + point1);
+
+                    }
+                } catch (JSONException e) {
+
+                }
+                CustomAdapter customAdapter = new CustomAdapter();
+                l1.setAdapter(customAdapter);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        RequestQueue re = Volley.newRequestQueue(getContext());
+        re.add(jsonObjectRequest);
+    }
+
 }

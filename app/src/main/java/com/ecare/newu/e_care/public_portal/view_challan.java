@@ -12,7 +12,18 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.toolbox.Volley;
 import com.ecare.newu.e_care.R;
+import com.ecare.newu.e_care.ip_url;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 
@@ -26,6 +37,7 @@ public class view_challan extends Fragment {
     ArrayList<String> vehical;
     ArrayList<String> resone;
     ArrayList<String> fine;
+    String user = "shubham";
     public view_challan() {
         // Required empty public constructor
     }
@@ -46,7 +58,7 @@ public class view_challan extends Fragment {
         vehical = new ArrayList<String>();
         resone = new ArrayList<String>();
         fine = new ArrayList<String>();
-
+/*
 
         chlno.add("1");
         date.add("10/10/2015");
@@ -60,9 +72,10 @@ public class view_challan extends Fragment {
         vehical.add("JH-01BN 0192");
         resone.add("Triplr");
         fine.add("Rs 1500");
-
-        CustomAdapter customAdapter = new CustomAdapter();
-        l1.setAdapter(customAdapter);
+*/
+    //    CustomAdapter customAdapter = new CustomAdapter();
+  //      l1.setAdapter(customAdapter);
+        server();
         return v;
     }
 
@@ -107,7 +120,7 @@ public class view_challan extends Fragment {
             b1.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-
+                    Toast.makeText(getContext(), "Paid", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -115,6 +128,60 @@ public class view_challan extends Fragment {
             return convertView;
 
         }
+    }
+
+
+    public void server() {
+
+        ip_url u   = new ip_url();
+        String ip = u.geturl();
+        String json_url_name = ip+"challan.php";
+
+        JSONObject params = new JSONObject();
+        try {
+            params.put("user", user);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, json_url_name, params, new Response.Listener<JSONObject>() {
+
+            @Override
+            public void onResponse(JSONObject response) {
+           //     Toast.makeText(getContext(), "he"+response, Toast.LENGTH_SHORT).show();
+                try {
+
+                    JSONArray jsonArray = response.getJSONArray("server_response");
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject student = jsonArray.getJSONObject(i);
+                        String sn1 = student.getString("ch");
+                        String date1 = student.getString("date");
+                        String vehical1 = student.getString("vehical");
+                        String resone1 = student.getString("resone");
+                        String fine1 = student.getString("fine");
+                        chlno.add(""+sn1);
+                        date.add("" + date1);
+                        vehical.add(""+vehical1);
+                        resone.add(""+resone1);
+                        fine.add(""+fine1);
+                    }
+                } catch (JSONException e) {
+
+                }
+                CustomAdapter customAdapter = new CustomAdapter();
+                l1.setAdapter(customAdapter);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+                Toast.makeText(getContext(), ""+error, Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+        RequestQueue re = Volley.newRequestQueue(getContext());
+        re.add(jsonObjectRequest);
     }
 
 }
