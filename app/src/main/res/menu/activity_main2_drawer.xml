@@ -32,6 +32,19 @@
         android:title="Emergancy Traffic Control" />
     </group>
 
+    <group
+        android:id="@+id/menu_top5"
+        android:checkableBehavior="single">
+        <item android:checkable="false"
+            android:title="Hospital"
+            android:checked="false"
+            android:enabled="false">
+        </item>
+        <item
+            android:id="@+id/hos"
+            android:title="Near By Hospital" />
+    </group>
+
     <item android:title="Communicate">
         <menu>
             <item
