@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.ecare.newu.e_care.R;
+import com.ecare.newu.e_care.public_portal.submit_image;
 
 public class Main3Activity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -55,19 +56,24 @@ public class Main3Activity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.rulebreak) {
-            // Handle the camera action
+            setTitle("View Rule Breaking");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_police, new view_rule_break()).commit();
         } else if (id == R.id.points) {
-
+            setTitle("Add Points");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_police, new add_points()).commit();
         } else if (id == R.id.challan) {
-
+            setTitle("Create and Impose Challan");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_police, new create_and_impose_challan()).commit();
         } else if (id == R.id.details) {
-
+            setTitle("View Travelling Details");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_police, new view_travelling_details()).commit();
         } else if (id == R.id.complaints) {
-
-        } else if (id == R.id.callamb) {
+            setTitle("View Filed Complaints");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_police, new view_filed_complaints()).commit();
 
         }else if (id == R.id.service) {
-
+            setTitle("Ambulances Near You");
+            getSupportFragmentManager().beginTransaction().replace(R.id.container_police, new ambulances_near_you()).commit();
         }else if (id == R.id.contact) {
 
         }

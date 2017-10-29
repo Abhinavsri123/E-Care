@@ -43,9 +43,6 @@
             android:id="@+id/complaints"
             android:title="View Filed Complaints" />
 
-        <item
-            android:id="@+id/callamb"
-            android:title="Ambulances near You"
             />
     </group>
 
