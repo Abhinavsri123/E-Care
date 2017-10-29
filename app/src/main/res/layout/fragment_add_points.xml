@@ -7,26 +7,57 @@
     <!-- TODO: Update blank fragment layout -->
 
 
+    <TextView
+        android:text="Username"
+        android:layout_width="wrap_content"
+        android:textSize="19dp"
+        android:layout_height="35dp"
+        android:id="@+id/textView45"
+        android:layout_marginStart="11dp"
+        android:layout_alignBottom="@+id/editText3"
+        android:layout_alignParentStart="true" />
+
     <EditText
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:hint="enter points here"
+        android:hint="Enter Username"
         android:ems="10"
         android:id="@+id/editText3"
-        android:layout_marginTop="123dp"
-        android:layout_below="@+id/textView49"
-        android:layout_centerHorizontal="true"
-        android:layout_width="200dp" />
+        android:layout_width="match_parent"
+        android:layout_marginTop="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/textView45"
+        android:layout_marginStart="17dp" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="Enter Points"
+        android:ems="10"
+        android:id="@+id/editText9"
+        android:layout_width="match_parent"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/editText3"
+        android:layout_alignStart="@+id/editText3" />
+
+    <Button
+        android:text="Button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editText9"
+        android:layout_alignStart="@+id/editText9"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="95dp"
+        android:id="@+id/button9" />
 
     <TextView
-        android:text="Enter the points to be added:"
-        android:layout_width="match_parent"
-        android:textSize="30sp"
-        android:layout_height="74dp"
+        android:text="Points"
+        android:layout_width="wrap_content"
+        android:textSize="19dp"
+        android:layout_height="35dp"
         android:id="@+id/textView49"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="65dp" />
+        android:layout_alignBottom="@+id/editText9"
+        android:layout_alignStart="@+id/textView45" />
 
 
 </RelativeLayout>
